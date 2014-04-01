@@ -27,11 +27,6 @@ public class ProblemPanel extends ContentPanel{
 	
 	
 	Choice tfClassroom = new Choice();
-
-	
-	
-	
-	
 	Choice tfManager = new Choice();
 
 
@@ -126,6 +121,9 @@ public class ProblemPanel extends ContentPanel{
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lClassroom = new Label("강의실");
 		lClassroom.setPreferredSize(new Dimension(90, 50));
+		tfClassroom.add("3-1");
+		tfClassroom.add("3-2");
+		tfClassroom.add("3-3");
 		rowPane.add(lClassroom);
 		rowPane.add(tfClassroom);
 		detailView.add(rowPane);
@@ -134,6 +132,9 @@ public class ProblemPanel extends ContentPanel{
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lManager = new Label("관리자");
 		lManager.setPreferredSize(new Dimension(90, 50));
+		tfManager.add("홍길동");
+		tfManager.add("임꺽정");
+		tfManager.add("장길산");
 		rowPane.add(lManager);
 		rowPane.add(tfManager);
 		detailView.add(rowPane);
@@ -183,6 +184,7 @@ public class ProblemPanel extends ContentPanel{
 
 		detailButtonbar = new Panel(new FlowLayout(FlowLayout.LEFT));
 		detailButtonbar.setPreferredSize(new Dimension(150, 50));
+		detailButtonbar.setVisible(false);
 		detailButtonbar.add(btnUpdate);
 		detailButtonbar.add(btnDelete);
 		detailButtonbar.add(btnCancel);
@@ -227,6 +229,7 @@ public class ProblemPanel extends ContentPanel{
 		
 		
 		content.add(detailView);
+		
 		detailView.add(detailButtonbar);
 		
 		controller.load();
