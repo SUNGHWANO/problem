@@ -55,7 +55,7 @@ public class StudentPanel extends ContentPanel {
 				
 				newButtonBar.setVisible(false);
 				detailButtonBar.setVisible(true);
-				
+				StudentPanel.this.validate();
 				
 				selectedIndex = listView.getSelectedIndex();
 			}
@@ -113,7 +113,7 @@ public class StudentPanel extends ContentPanel {
 		detailButtonBar.add(btnUpdate);
 		detailButtonBar.add(btnDelete);
 		detailButtonBar.add(btnCancel);
-		
+		detailButtonBar.setVisible(false);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Student s = new Student();

@@ -75,6 +75,7 @@ public class ProblemPanel extends ContentPanel{
 
 				detailButtonbar.setVisible(true);
 				newButtonbar.setVisible(false);
+				ProblemPanel.this.validate();
 				selectIndex = listView.getSelectedIndex();
 			}
 		});
