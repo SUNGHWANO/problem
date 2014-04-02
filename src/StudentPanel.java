@@ -109,7 +109,7 @@ public class StudentPanel extends ContentPanel {
 		detailView.add(newButtonBar);
 		
 		detailButtonBar = createRowPane();
-		detailButtonBar.setVisible(false);
+		
 		detailButtonBar.add(btnUpdate);
 		detailButtonBar.add(btnDelete);
 		detailButtonBar.add(btnCancel);

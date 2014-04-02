@@ -73,8 +73,8 @@ public class ProblemPanel extends ContentPanel{
 				tfClassroom.select(p.classRoom);
 				tfManager.select(p.manager);
 
-				newButtonbar.setVisible(false);
 				detailButtonbar.setVisible(true);
+				newButtonbar.setVisible(false);
 				selectIndex = listView.getSelectedIndex();
 			}
 		});
@@ -82,13 +82,13 @@ public class ProblemPanel extends ContentPanel{
 
 
 		detailView.setPreferredSize(new Dimension(300, 450));
-		content.add(detailView);
+		
 
 
 		Panel rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lTitle = new Label("과목");
-		lTitle.setPreferredSize(new Dimension(90, 50));
+		lTitle.setPreferredSize(new Dimension(60, 50));
 		rowPane.add(lTitle);
 		rowPane.add(tfTitle);
 		detailView.add(rowPane);
@@ -96,7 +96,7 @@ public class ProblemPanel extends ContentPanel{
 		rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lTcher = new Label("강사");
-		lTcher.setPreferredSize(new Dimension(90, 50));
+		lTcher.setPreferredSize(new Dimension(60, 50));
 		rowPane.add(lTcher);
 		rowPane.add(tfTcher);
 		detailView.add(rowPane);
@@ -104,7 +104,7 @@ public class ProblemPanel extends ContentPanel{
 		rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lStdata = new Label("시작일");
-		lStdata.setPreferredSize(new Dimension(90, 50));
+		lStdata.setPreferredSize(new Dimension(60, 50));
 		rowPane.add(lStdata);
 		rowPane.add(tfStdata);
 		detailView.add(rowPane);
@@ -112,7 +112,7 @@ public class ProblemPanel extends ContentPanel{
 		rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lEnddata = new Label("종료일");
-		lEnddata.setPreferredSize(new Dimension(90, 50));
+		lEnddata.setPreferredSize(new Dimension(60, 50));
 		rowPane.add(lEnddata);
 		rowPane.add(tfEnddata);
 		detailView.add(rowPane);
@@ -120,7 +120,7 @@ public class ProblemPanel extends ContentPanel{
 		rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lClassroom = new Label("강의실");
-		lClassroom.setPreferredSize(new Dimension(90, 50));
+		lClassroom.setPreferredSize(new Dimension(60, 50));
 		tfClassroom.add("3-1");
 		tfClassroom.add("3-2");
 		tfClassroom.add("3-3");
@@ -131,7 +131,7 @@ public class ProblemPanel extends ContentPanel{
 		rowPane = new Panel(new FlowLayout(FlowLayout.LEFT));
 		rowPane.setPreferredSize(new Dimension(190, 50));
 		Label lManager = new Label("관리자");
-		lManager.setPreferredSize(new Dimension(90, 50));
+		lManager.setPreferredSize(new Dimension(60, 50));
 		tfManager.add("홍길동");
 		tfManager.add("임꺽정");
 		tfManager.add("장길산");
@@ -213,7 +213,7 @@ public class ProblemPanel extends ContentPanel{
 					newButtonbar.setVisible(true);
 					detailButtonbar.setVisible(false);
 					listView.remove(selectIndex);
-					content.remove(selectIndex);
+					controller.delete(selectIndex);
 					clearForm();
 				}
 			});
@@ -228,10 +228,11 @@ public class ProblemPanel extends ContentPanel{
 			});
 		
 		
-		content.add(detailView);
+		
 		
 		detailView.add(detailButtonbar);
 		
+		content.add(detailView);
 		controller.load();
 		displayList();
 
